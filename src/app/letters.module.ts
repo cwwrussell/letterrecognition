@@ -1,22 +1,18 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {AppRoutingModule} from './letters-routing.module';
+import {LettersRoutingModule} from './letters-routing.module';
 import {LettersComponent} from './letters.component';
-import {StudentModule} from './modules/student/student.module';
-import {TeacherModule} from './modules/teacher/teacher.module';
-import {LandingModule} from './modules/landing/landing.module';
+import { LandingPageComponent } from './shared/landing/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     LettersComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    LandingModule,
-    StudentModule,
-    TeacherModule,
+    LettersRoutingModule,
   ],
   providers: [],
   bootstrap: [LettersComponent]

@@ -1,12 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {TeacherModule} from './modules/teacher/teacher.module';
-import {route as LandingPage} from './modules/landing/pages/landing/landing.component';
+import {route as LandingPage} from './shared/landing/landing-page/landing-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingPage.component
+    component: LandingPage.component,
+    data: LandingPage.data,
+    resolve: LandingPage.resolve,
   },
   {
     path: 'teacher',
@@ -26,5 +27,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
+export class LettersRoutingModule {
 }

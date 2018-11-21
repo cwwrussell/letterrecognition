@@ -14,3 +14,9 @@ export class StudentComponent implements OnInit {
   }
 
 }
+
+export const route = {
+  component: StudentComponent,
+  data: {},
+  resolve: {}
+};
