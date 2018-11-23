@@ -1,3 +1,19 @@
-<a routerLink="/teacher">TEACHER</a>
-<br/>
-<a routerLink="/student">STUDENT</a>
+<div class="grid-center landing-nav">
+  <div class="col-12"></div>
+  <div class="col-12"></div>
+  <div class="col-12"></div>
+  <div class="col-12"></div>
+  <div class="col-12">
+    <h1 class="title">Who are you?</h1>
+  </div>
+  <div class="col-12 grid-center">
+    <div class="col-3_md-5_xs-8">
+      <letters-nav-card [imgSrc]="'../../../../assets/icons/teacher.png'" [linkTo]="'/teacher'"
+                        [title]="'Teacher'"></letters-nav-card>
+    </div>
+    <div class="col-3_md-5_xs-8">
+      <letters-nav-card [imgSrc]="'../../../../assets/icons/student.png'" [linkTo]="'/student'"
+                        [title]="'Student'"></letters-nav-card>
+    </div>
+  </div>
+</div>

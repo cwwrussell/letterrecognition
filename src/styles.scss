@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'themes/theming';
+@import 'styles-component-global';
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #CCCCCC;
+}
+
+* {
+  font-family: Arial; /* find a better, more pronounced, font */
+}
+
+.title {
+  text-align: center;
+}
+
+.form-element {
+  &.full-width {
+    * {
+      width: 100%;
+    }
+  }
+}

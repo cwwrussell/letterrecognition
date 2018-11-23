@@ -1,0 +1,13 @@
+<div *ngIf="render">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h3 class="title">{{title}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img *ngIf="!!imgSrc" [src]="imgSrc"/>
+    <mat-card-actions class="form-element full-width">
+      <button [routerLink]="linkTo" color="primary" mat-raised-button>Go</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@include mat-core();
+@import 'palette.scss';
+$letter-app-primary: mat-palette($primary-palette-map);
+$letter-app-accent: mat-palette($primary-palette-map, A200, A100, A400);
+$letter-app-warn: mat-palette($letter-warn-map);
+$letter-app-theme: mat-light-theme($letter-app-primary, $letter-app-accent, $letter-app-warn);
+@include angular-material-theme($letter-app-theme);
