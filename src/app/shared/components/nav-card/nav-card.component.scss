@@ -1,6 +1,8 @@
 mat-card {
-  padding: 0 0 16px 0;
-  width: 100%;
+  padding: 0 5%;
+  width: 80%;
+  background-color: #82c785;
+  color: white;
 
   img {
     display: block;
@@ -9,11 +11,17 @@ mat-card {
   }
 
   mat-card-actions {
-    padding: 0 16px 0 16px;
-    margin-top: 16px;
+    padding: 0 8px 0 8px;
+    margin-top: 8px;
   }
 
   mat-card-header {
-    padding: 16px 16px 0 16px;
+    padding: 8px 8px 0 8px;
+  }
+  button {
+    margin: 5%;
+    font-size: 1.5em;
+    padding: .5em;
+    font-weight: bold;
   }
 }
