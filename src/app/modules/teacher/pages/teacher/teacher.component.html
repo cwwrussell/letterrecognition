@@ -1,2 +1,5 @@
 <div>nav here</div>
+<div *ngFor="let navItem of navItems">
+  <button routerLink="{{ navItem.routeTo }}" mat-raised-button color="primary">{{ navItem.label }}</button>
+</div>
 <router-outlet></router-outlet>
