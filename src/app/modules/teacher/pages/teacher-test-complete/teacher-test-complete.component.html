@@ -12,11 +12,10 @@
       <mat-divider></mat-divider>
       <mat-card-content>
         <h4 style="margin-top: 20px">Choose Student</h4>
-        <mat-select placeholder="Select Student" [(value)]="student">
-          <mat-option value="Chris">Chris</mat-option>
-          <mat-option value="Heather">Heather</mat-option>
-          <mat-option value="John">John</mat-option>
-          <mat-option value="Cristian">Cristian</mat-option>
+        <mat-select placeholder="Select Student" [(value)] = 'studentId'>
+          <mat-option *ngFor="let student of studentList" [(value)]='student.viewValue'>
+            {{student.value}}
+          </mat-option>
         </mat-select>
       </mat-card-content>
       <mat-card-actions>

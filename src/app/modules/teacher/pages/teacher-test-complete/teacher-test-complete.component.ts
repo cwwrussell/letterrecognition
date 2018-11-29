@@ -12,7 +12,14 @@ export class TeacherTestCompleteComponent implements OnInit {
               private router: Router) {
   }
 
-  student = 'Select Student';
+  studentId = 'Select Student';
+
+  studentList = [
+    {value: 'Chris', viewValue: '11111111'},
+    {value: 'Heather', viewValue: '222222222'},
+    {value: 'John', viewValue: '33333333333'},
+    {value: 'Cristian', viewValue: '4444444444'},
+  ];
 
   ngOnInit() {
   }
@@ -20,9 +27,8 @@ export class TeacherTestCompleteComponent implements OnInit {
   chooseStudentAndRedoTest() {
     // should have a student dropdown to choose a different student,
     // then the route would be ['..', '..', 'studentId']
-    this.router.navigate(['..'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['../../', this.studentId], {relativeTo: this.activatedRoute});
   }
-
 }
 
 export const route = {
