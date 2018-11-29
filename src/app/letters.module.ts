@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/Animations';
 import {NgModule} from '@angular/core';
 
 import {LettersRoutingModule} from './letters-routing.module';
@@ -14,7 +14,7 @@ import {NavCardComponent} from './shared/components/nav-card/nav-card.component'
     NavCardComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     LettersRoutingModule,
     MatButtonModule,
     MatCardModule,
