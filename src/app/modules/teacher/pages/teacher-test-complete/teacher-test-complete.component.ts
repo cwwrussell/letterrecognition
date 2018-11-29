@@ -12,6 +12,8 @@ export class TeacherTestCompleteComponent implements OnInit {
               private router: Router) {
   }
 
+  student = 'Select Student';
+
   ngOnInit() {
   }
 

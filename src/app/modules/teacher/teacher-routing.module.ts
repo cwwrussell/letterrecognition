@@ -64,7 +64,7 @@ const routes: Routes = [
             component: TestView.component,
             data: TestView.data,
             resolve: TestView.resolve
-          },{
+          }, {
             path: 'complete',
             component: TestComplete.component,
             data: TestComplete.data,
