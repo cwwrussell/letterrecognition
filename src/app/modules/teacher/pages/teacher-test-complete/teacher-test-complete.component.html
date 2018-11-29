@@ -1,8 +1,3 @@
-<!--<p>-->
-<!--teacher-test-complete works!-->
-<!--</p>-->
-<!--<button mat-raised-button color="contrast" (click)="chooseStudentAndRedoTest()">Test Some Other Random Student Or Something</button>-->
-
 <mat-grid-list cols="2" style="margin: 20px" rowHeight="500px">
   <mat-grid-tile>
     <mat-card style="padding: 20px">
@@ -28,10 +23,10 @@
     <mat-card>
       <mat-card-content style="height: 250px; width: 300px; padding: 20px; ">
         <div style="margin-top: 50px">
-          <button mat-raised-button color="primary" style="height: 70px; width: 100%;">Home</button>
+          <button mat-raised-button color="primary" style="height: 70px; width: 100%;" (click)="goHome()">Home</button>
           <br/>
           <br/>
-          <button mat-raised-button color="primary" style="height: 70px; width: 100%">Student Results</button>
+          <button mat-raised-button color="primary" style="height: 70px; width: 100%" (click)="goToStudentData()">Student Results</button>
         </div>
       </mat-card-content>
     </mat-card>

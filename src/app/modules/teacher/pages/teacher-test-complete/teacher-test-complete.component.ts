@@ -29,6 +29,14 @@ export class TeacherTestCompleteComponent implements OnInit {
     // then the route would be ['..', '..', 'studentId']
     this.router.navigate(['../../', this.studentId], {relativeTo: this.activatedRoute});
   }
+
+  goHome() {
+    this.router.navigate(['/']);
+  }
+
+  goToStudentData() {
+    this.router.navigate(['../../../', 'data', '1212121212'], {relativeTo: this.activatedRoute});
+  }
 }
 
 export const route = {
