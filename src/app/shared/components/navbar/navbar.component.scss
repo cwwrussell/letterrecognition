@@ -1,5 +1,12 @@
 .nav-buttons {
   margin: 10px 0 20px 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .nav-button {
@@ -15,5 +22,26 @@
 
   &:not(.active) {
     color: black;
+  }
+}
+
+.soft-corners {
+  @media (max-width: 36em) {
+    .first-item {
+      border-radius: 4px 4px 0 0;
+    }
+
+    .last-item {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+  @media (min-width: 36em) {
+    .first-item {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .last-item {
+      border-radius: 0 4px 4px 0;
+    }
   }
 }
