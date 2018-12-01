@@ -13,6 +13,7 @@ export class TeacherLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.navigate();
   }
 
   navigate() {

@@ -1,4 +1,67 @@
-<p>
-  teacher-home works!
-</p>
-<button mat-raised-button color="contrast" (click)="goToTest()">Test Some Random Student</button>
+<div class="col-12 grid-center">
+  <div class="col-3_lg-4_md-5_sm-8 nav-container">
+    <mat-card>
+      <mat-card-title>Test</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content flex>
+        <h4>Choose Student</h4>
+        <mat-select placeholder="Select Student" [(value)]='studentId'>
+          <mat-option *ngFor="let student of studentList" [(value)]='student.viewValue'>
+            {{student.value}}
+          </mat-option>
+        </mat-select>
+        <h4>Choose test</h4>
+        <mat-select placeholder="Select Test" [(value)]='testId'>
+          <mat-option *ngFor="let test of testList" [(value)]='test.viewValue'>
+            {{test.value}}
+          </mat-option>
+        </mat-select>
+      </mat-card-content>
+      <div class="card-footer">
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goToTest()">Start</button>
+    </mat-card-actions>
+  </div>
+
+    </mat-card>
+  </div>
+  <div class="col-3_lg-4_md-5_sm-8 nav-container">
+    <mat-card>
+      <mat-card-title>Data</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content flex>
+        <h4>Choose Student</h4>
+        <mat-select placeholder="Select Student" [(value)]='studentId'>
+          <mat-option *ngFor="let student of studentList" [(value)]='student.viewValue'>
+            {{student.value}}
+          </mat-option>
+        </mat-select>
+      </mat-card-content>
+      <div class="card-footer">
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goToStudentData()">View Student</button>
+      </mat-card-actions>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goToClassData()">All Students</button>
+      </mat-card-actions>
+    </div>
+    </mat-card>
+  </div>
+  <div class="col-3_lg-4_md-5_sm-8 nav-container">
+    <mat-card>
+      <mat-card-title>Settings</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content flex style="font-size: 5em;text-align: center">
+        &#9881;
+      </mat-card-content>
+      <div class="card-footer">
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addStudent()">Add Student</button>
+      </mat-card-actions>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goToSettings()">Modify Test</button>
+      </mat-card-actions>
+    </div>
+    </mat-card>
+  </div>
+</div>
