@@ -15,7 +15,7 @@ export class StudentLoadingComponent implements OnInit {
   ngOnInit() {
     setTimeout(
       () => this.router.navigate(['sometestid'], {relativeTo: this.activatedRoute}),
-      1000
+      5000
     );
   }
 
