@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'phMissPam';
+  src: URL('../../../assets/icons/phMissPam.ttf') format('truetype');
+}
+
+.letter {
+  font:inherit;
+  font-family: phMissPam;
+  font-size: 30em;
+}
+
+.row {
+  margin-top: 5%;
+}
