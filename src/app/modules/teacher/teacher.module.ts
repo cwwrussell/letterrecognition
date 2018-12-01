@@ -11,7 +11,8 @@ import {TeacherTestCompleteComponent} from './pages/teacher-test-complete/teache
 import {TeacherClassDataComponent} from './pages/teacher-class-data/teacher-class-data.component';
 import {TeacherStudentDataComponent} from './pages/teacher-student-data/teacher-student-data.component';
 import {TeacherSettingsComponent} from './pages/teacher-settings/teacher-settings.component';
-import {MatButtonModule, MatCardModule, MatGridListModule, MatDividerModule, MatSelectModule, MatTableModule} from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, MatSelectModule} from '@angular/material';
 
 @NgModule({
   imports: [
