@@ -9,3 +9,4 @@ $letter-app-theme: mat-light-theme($letter-app-primary, $letter-app-accent, $let
 
 @import 'mixins';
 @include letters-nav-card-theme($letter-app-theme);
+@include letters-navbar-theme($letter-app-theme);

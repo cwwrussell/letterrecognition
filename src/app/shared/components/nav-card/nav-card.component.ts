@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./nav-card.component.scss']
 })
 export class NavCardComponent implements OnInit {
-  render: boolean;
+  _render: boolean;
 
   @Input()
   title: string;
@@ -40,7 +40,9 @@ export class NavCardComponent implements OnInit {
    * sets the render state respectively
    */
   validateFields(): boolean {
-    return this.render = !!this.buttonText && (!this.linkToIsNullOrEmpty() || !this.titleIsNull());
+    const retVal = !!this.buttonText && (!this.linkToIsNullOrEmpty() || !this.titleIsNull());
+    setTimeout(() => this._render = retVal, 0);
+    return retVal;
   }
 
   /**
@@ -75,5 +77,9 @@ export class NavCardComponent implements OnInit {
       console.error('NavCard.title attribute must not be null.');
     }
     return !this.title;
+  }
+
+  get render(): boolean {
+    return this._render;
   }
 }

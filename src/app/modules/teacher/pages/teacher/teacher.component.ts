@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {NavItem} from '../../../../shared/components/navbar/navbar.component';
 
-interface NavItem {
-  label: string;
-  routeTo: string;
-}
+
 
 @Component({
   selector: 'letters-teacher',

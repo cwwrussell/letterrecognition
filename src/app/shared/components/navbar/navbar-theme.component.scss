@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+@mixin letters-navbar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .nav-button {
+    &:not(.active) {
+      background-color: mat-color($primary, 300);
+      cursor: hand;
+      cursor: pointer;
+
+      &:hover {
+        background-color: mat-color($primary, 400);
+      }
+      &:active {
+        background-color: mat-color($primary, 900);
+      }
+    }
+
+    &.active {
+      background-color: mat-color($primary, 700);
+    }
+  }
+}

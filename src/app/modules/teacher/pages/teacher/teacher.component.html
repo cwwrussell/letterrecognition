@@ -1,5 +1,12 @@
-<div>nav here</div>
-<div *ngFor="let navItem of navItems">
-  <button routerLink="{{ navItem.routeTo }}" mat-raised-button color="primary">{{ navItem.label }}</button>
+<div class="col-12 grid-noGutter-center-bottom nav-container">
+  <div class="col-8">
+    <h2>CS3410 App Name</h2>
+  </div>
+  <div class="col-2">
+      <button mat-stroked-button class="logout" routerLink="/">Logout</button>
+  </div>
+  <div class="col-10">
+    <letters-navbar [navItems]="navItems"></letters-navbar>
+  </div>
 </div>
 <router-outlet></router-outlet>

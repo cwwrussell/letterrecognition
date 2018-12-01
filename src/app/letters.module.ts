@@ -6,6 +6,7 @@ import {LettersComponent} from './letters.component';
 import {LandingPageComponent} from './shared/landing/landing-page/landing-page.component';
 import {MatButtonModule, MatCardModule} from '@angular/material';
 import {NavCardComponent} from './shared/components/nav-card/nav-card.component';
+import {NavbarModule} from './shared/components/navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {NavCardComponent} from './shared/components/nav-card/nav-card.component'
     LettersRoutingModule,
     MatButtonModule,
     MatCardModule,
+    NavbarModule,
   ],
   providers: [],
   bootstrap: [LettersComponent]

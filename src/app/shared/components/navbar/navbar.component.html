@@ -1,0 +1,10 @@
+<div *ngIf="render">
+  <div class="grid nav-buttons">
+    <div class="col-12 grid soft-corners">
+      <div *ngFor="let navItem of navItems; let first = first; let last = last;" class="col nav-button" routerLink="{{navItem.routeTo}}" routerLinkActive="active"
+      [ngClass]="{'first-item': first, 'last-item': last}">
+        {{navItem.label}}
+      </div>
+    </div>
+  </div>
+</div>

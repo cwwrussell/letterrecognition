@@ -13,6 +13,7 @@ import {TeacherStudentDataComponent} from './pages/teacher-student-data/teacher-
 import {TeacherSettingsComponent} from './pages/teacher-settings/teacher-settings.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, MatIconModule, MatSelectModule} from '@angular/material';
+import {NavbarModule} from '../../shared/components/navbar/navbar.module';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import {MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, Mat
     MatSelectModule,
     MatTableModule,
     MatIconModule,
+    NavbarModule,
   ],
   declarations: [
     TeacherComponent,
