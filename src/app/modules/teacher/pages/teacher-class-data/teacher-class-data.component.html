@@ -1,4 +1,16 @@
-<p>
-  teacher-class-data works!
-</p>
-<button mat-raised-button color="contrast" (click)="navigateToStudentData()">Student Data</button>
+<h1>Student Grades</h1>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" flex>
+  <ng-container matColumnDef='name'>
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef='let element'><a (click)="goToStudentData(element.id)">{{element.name}}</a></td>
+  </ng-container>
+
+  <ng-container *ngFor="let column of ALPHABET" [matColumnDef]='column'>
+    <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+    <td mat-cell *matCellDef='let element'>{{element.letters.includes(column) ? "&#10003;" : '&#9675;'}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef='displayedColumns'></tr>
+  <tr mat-row *matRowDef='let row; let even=even; columns: displayedColumns;' [ngClass]="{gray: even}"></tr>
+</table>
