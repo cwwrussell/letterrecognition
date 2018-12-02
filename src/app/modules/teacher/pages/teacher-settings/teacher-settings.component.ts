@@ -8,7 +8,7 @@ import {MatTableDataSource} from '@angular/material';
 })
 
 export class TeacherSettingsComponent implements OnInit {
-  studentColumns = ['position', 'name', 'active'];
+  studentColumns = ['position', 'name', 'active', 'actions'];
   studentData = new MatTableDataSource<Student>(STUDENT_DATA);
 
   testColumns = ['testNumber', 'name', 'active'];
@@ -17,7 +17,14 @@ export class TeacherSettingsComponent implements OnInit {
   themeColumns = ['theme', 'active'];
   themeData = new MatTableDataSource<Theme>(THEME_DATA);
 
+  breakpoint;
+
   ngOnInit() {
+    this.breakpoint = (window.innerWidth <= 870) ? 1 : 2;
+  }
+
+  onResize(event) {
+    this.breakpoint = (event.target.innerWidth <= 870) ? 1 : 2;
   }
 }
 
