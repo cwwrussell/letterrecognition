@@ -1,4 +1,4 @@
-<mat-grid-list cols="2" style="margin: 20px" rowHeight="500px">
+<mat-grid-list [cols]="breakpoint" style="margin: 20px" rowHeight="500px" (window:resize)="onResize($event)">
   <mat-grid-tile>
     <mat-card style="padding: 20px; width: 350px">
       <mat-card-title>

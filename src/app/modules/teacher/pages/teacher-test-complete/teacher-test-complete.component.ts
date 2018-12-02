@@ -21,7 +21,14 @@ export class TeacherTestCompleteComponent implements OnInit {
     {value: 'Cristian', viewValue: '4444444444'},
   ];
 
+  breakpoint;
+
   ngOnInit() {
+    this.breakpoint = (window.innerWidth <= 870) ? 1 : 2;
+  }
+
+  onResize(event) {
+    this.breakpoint = (event.target.innerWidth <= 870) ? 1 : 2;
   }
 
   chooseStudentAndRedoTest() {
