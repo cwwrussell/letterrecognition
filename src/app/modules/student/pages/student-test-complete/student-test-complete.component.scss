@@ -22,7 +22,8 @@ button {
   padding: .5em 1em;
   display: block;
   float: right;
-  margin-right: 20%;
+  margin-top: 2%;
+  margin-right: 5%;
 }
 
 #words {
@@ -36,7 +37,7 @@ button {
 @media (max-width: 1024px){
   .container {
     background-size: 85%;
-    margin-left: 7%;
+    margin-left: 15%;
     margin-top: 0;
   }
   h1 {
