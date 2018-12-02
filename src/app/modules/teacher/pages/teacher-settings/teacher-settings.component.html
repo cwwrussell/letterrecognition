@@ -1,11 +1,12 @@
-<mat-grid-list class='settings' [cols]="breakpoint" style="margin: 20px" rowHeight="550px"
+<button style="margin: 0 5px 0 10px;" mat-raised-button color="primary">
+  <mat-icon>person_add</mat-icon>
+</button>
+<mat-grid-list class='settings' [cols]="breakpoint" style="margin: 0 20px 20px 20px" rowHeight="550px"
                (window:resize)="onResize($event)">
 
   <mat-grid-tile>
     <div style="width: 100%">
-      <button style="margin: 0 5px 5px 0;" mat-raised-button color="primary">
-        <mat-icon>person_add</mat-icon>
-      </button>
+
       <br/>
       <mat-card-title>
         Student List
@@ -44,7 +45,7 @@
   </mat-grid-tile>
 
   <mat-grid-tile>
-    <div style="width: 100%; margin-top: 13px">
+    <div style="width: 100%; margin-top: 18px">
       <mat-card-title>
         Select Test
       </mat-card-title>
