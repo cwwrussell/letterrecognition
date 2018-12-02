@@ -1,5 +1,6 @@
 .container {
   height: 100%;
+  width: 75%;
   background-image: url(/assets/icons/confetti.gif);
   background-repeat: no-repeat;
   background-size: 70%;
@@ -16,6 +17,14 @@ img {
   width: 200px;
 }
 
+button {
+  font-size: 1.5em;
+  padding: .5em 1em;
+  display: block;
+  float: right;
+  margin-right: 20%;
+}
+
 #words {
   display: flex;
   align-items: center;
@@ -26,11 +35,17 @@ img {
 
 @media (max-width: 1024px){
   .container {
-    background-size: 90%;
-    margin-left: 10%;
+    background-size: 85%;
+    margin-left: 7%;
     margin-top: 0;
   }
+  h1 {
+    font-size: 3em;
+  }
+  img {
+    width: 150px;
+  }
   #words {
-    margin: 15% 30% 30% 30%;
+    margin: 10% 20% 30% 30%;
   }
 }
