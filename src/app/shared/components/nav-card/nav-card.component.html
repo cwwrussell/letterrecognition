@@ -6,8 +6,18 @@
       </mat-card-title>
     </mat-card-header>
     <img *ngIf="!!imgSrc" [src]="imgSrc"/>
+    <div *ngIf="loadState === loadStates.loading" class="nav-card-content">
+      <mat-spinner color="accent" class="loadingSpinner"></mat-spinner>
+      <h4 *ngIf="!!loadingMessage">{{loadingMessage}}</h4>
+    </div>
+    <div *ngIf="loadState === loadStates.complete" class="nav-card-content">
+      <h1>Ready!</h1>
+    </div>
+
     <mat-card-actions class="form-element full-width">
-      <button [routerLink]="linkTo" color="contrast" mat-raised-button>Go</button>
+      <button [routerLink]="linkTo" color="contrast"
+              [disabled]="loadState === loadStates.loading"
+              mat-raised-button>{{buttonText}}</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -1,5 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+export enum NavCardLoadState {
+  loading, complete
+}
+
 @Component({
   selector: 'letters-nav-card',
   templateUrl: './nav-card.component.html',
@@ -7,6 +11,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class NavCardComponent implements OnInit {
   _render: boolean;
+  public loadStates = NavCardLoadState;
 
   @Input()
   title: string;
@@ -19,6 +24,12 @@ export class NavCardComponent implements OnInit {
 
   @Input()
   imgSrc: string;
+
+  @Input()
+  loadState: NavCardLoadState;
+
+  @Input()
+  loadingMessage: string;
 
   constructor() {
   }
@@ -40,7 +51,9 @@ export class NavCardComponent implements OnInit {
    * sets the render state respectively
    */
   validateFields(): boolean {
-    const retVal = !!this.buttonText && (!this.linkToIsNullOrEmpty() || !this.titleIsNull());
+    const retVal = !!this.buttonText &&
+      (!this.linkToIsNullOrEmpty() || !this.titleIsNull()) &&
+      this.imageXorLoading();
     setTimeout(() => this._render = retVal, 0);
     return retVal;
   }
@@ -77,6 +90,14 @@ export class NavCardComponent implements OnInit {
       console.error('NavCard.title attribute must not be null.');
     }
     return !this.title;
+  }
+
+  imageXorLoading(): boolean {
+    if (this.loadState != null && !!this.imgSrc) {
+      return false;
+    } else {
+      return this.loadState != null || !!this.imgSrc;
+    }
   }
 
   get render(): boolean {

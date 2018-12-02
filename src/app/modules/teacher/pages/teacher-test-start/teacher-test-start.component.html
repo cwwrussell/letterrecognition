@@ -1,2 +1,8 @@
-<button mat-raised-button color="contrast" (click)="startTest()">Start the test eh</button>
-<mat-spinner color="accent"></mat-spinner>
+<div class="grid-center">
+  <div class="col-6_md-8_sm-12">
+    <letters-nav-card [loadState]="loadState"
+                      [linkTo]="testLink"
+                      [title]="title"
+                      [loadingMessage]="loadingMessage"></letters-nav-card>
+  </div>
+</div>

@@ -14,7 +14,7 @@ import {TeacherSettingsComponent} from './pages/teacher-settings/teacher-setting
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, MatIconModule, MatSelectModule} from '@angular/material';
 import {NavbarModule} from '../../shared/components/navbar/navbar.module';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {NavCardModule} from '../../shared/components/nav-card/nav-card.module';
 
 @NgModule({
   imports: [
@@ -28,7 +28,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatTableModule,
     MatIconModule,
     NavbarModule,
-    MatProgressSpinnerModule,
+    NavCardModule,
   ],
   declarations: [
     TeacherComponent,
