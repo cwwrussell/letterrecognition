@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NavItem} from '../../../../shared/components/navbar/navbar.component';
 
-
-
 @Component({
   selector: 'letters-teacher',
   templateUrl: './teacher.component.html',
@@ -12,6 +10,7 @@ import {NavItem} from '../../../../shared/components/navbar/navbar.component';
 export class TeacherComponent implements OnInit {
   navItems: NavItem[];
   routeBase: string;
+  testActive = false;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router) {

@@ -3,10 +3,14 @@
     <img src="../../assets/icons/logo.svg" width="50%">
   </div>
   <div class="col-2">
-      <button mat-stroked-button class="logout" routerLink="/">Logout</button>
+    <button mat-stroked-button class="logout" routerLink="/">Logout</button>
   </div>
-  <div class="col-10">
+  <div class="col-10" *ngIf="!testActive">
     <letters-navbar [navItems]="navItems"></letters-navbar>
   </div>
 </div>
-<router-outlet></router-outlet>
+<div class="grid-center">
+  <div class="col-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>
