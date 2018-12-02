@@ -8,8 +8,14 @@ import {MatTableDataSource} from '@angular/material';
 })
 
 export class TeacherSettingsComponent implements OnInit {
-  displayedColumns = ['position', 'name', 'active'];
-  dataSource = new MatTableDataSource<Student>(STUDENT_DATA);
+  studentColumns = ['position', 'name', 'active'];
+  studentData = new MatTableDataSource<Student>(STUDENT_DATA);
+
+  testColumns = ['testNumber', 'name', 'active'];
+  testData = new MatTableDataSource<Test>(TEST_DATA);
+
+  themeColumns = ['theme', 'active'];
+  themeData = new MatTableDataSource<Theme>(THEME_DATA);
 
   ngOnInit() {
   }
@@ -21,6 +27,17 @@ export interface Student {
   active: string;
 }
 
+export interface Test {
+  testNumber: number;
+  name: string;
+  active: string;
+}
+
+export interface Theme {
+  theme: string;
+  active: string;
+}
+
 const STUDENT_DATA: Student[] = [
   {position: 1, name: 'Cristian', active: 'true'},
   {position: 2, name: 'Chris', active: 'true'},
@@ -28,6 +45,18 @@ const STUDENT_DATA: Student[] = [
   {position: 4, name: 'John', active: 'true'},
   {position: 5, name: 'Bob', active: 'true'},
   {position: 6, name: 'Ben', active: 'true'},
+];
+
+const TEST_DATA: Test[] = [
+  {testNumber: 1, name: 'Upper Case', active: 'true'},
+  {testNumber: 2, name: 'Lower Case', active: 'true'},
+  {testNumber: 3, name: 'Mixed Case', active: 'true'},
+];
+
+const THEME_DATA: Theme[] = [
+  {theme: 'Fall', active: 'true'},
+  {theme: 'Spring', active: 'false'},
+  {theme: 'Summer', active: 'false'},
 ];
 
 export const route = {
