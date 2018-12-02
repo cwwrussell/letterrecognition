@@ -12,9 +12,19 @@ import {TeacherClassDataComponent} from './pages/teacher-class-data/teacher-clas
 import {TeacherStudentDataComponent} from './pages/teacher-student-data/teacher-student-data.component';
 import {TeacherSettingsComponent} from './pages/teacher-settings/teacher-settings.component';
 import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, MatIconModule, MatSelectModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDividerModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatSelectModule
+} from '@angular/material';
 import {NavbarModule} from '../../shared/components/navbar/navbar.module';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {TeacherAddStudentComponent} from './pages/teacher-add-student/teacher-add-student.component';
 
 @NgModule({
   imports: [
@@ -29,6 +39,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatIconModule,
     NavbarModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
+    MatInputModule,
   ],
   declarations: [
     TeacherComponent,
@@ -39,8 +51,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     TeacherTestCompleteComponent,
     TeacherClassDataComponent,
     TeacherStudentDataComponent,
-    TeacherSettingsComponent
-  ]
+    TeacherSettingsComponent,
+    TeacherAddStudentComponent,
+  ],
+  entryComponents: [TeacherAddStudentComponent],
 })
 export class TeacherModule {
 }

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MatTableDataSource} from '@angular/material';
+import {MatDialogConfig, MatTableDataSource} from '@angular/material';
+import {MatDialog} from '@angular/material/dialog';
+import {TeacherAddStudentComponent} from '../teacher-add-student/teacher-add-student.component';
 
 @Component({
   selector: 'letters-teacher-settings',
@@ -8,6 +10,9 @@ import {MatTableDataSource} from '@angular/material';
 })
 
 export class TeacherSettingsComponent implements OnInit {
+
+  constructor(public dialog: MatDialog) {}
+
   studentColumns = ['position', 'name', 'active', 'actions'];
   studentData = new MatTableDataSource<Student>(STUDENT_DATA);
 
@@ -25,6 +30,11 @@ export class TeacherSettingsComponent implements OnInit {
 
   onResize(event) {
     this.breakpoint = (event.target.innerWidth <= 870) ? 1 : 2;
+  }
+
+  addUserModal(): void {
+    const dialogConfig = new MatDialogConfig();
+    this.dialog.open(TeacherAddStudentComponent, dialogConfig);
   }
 }
 
