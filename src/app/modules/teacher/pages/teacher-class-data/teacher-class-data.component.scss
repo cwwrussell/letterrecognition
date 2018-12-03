@@ -21,3 +21,9 @@ a {
 .table {
   margin-right: 8%;
 }
+
+@media (max-width: 1024px) {
+  .table {
+    font-size: 75%;
+  }
+}
