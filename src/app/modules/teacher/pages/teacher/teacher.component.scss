@@ -14,16 +14,11 @@ h2 {
   text-align: right;
 }
 
-.border {
-  background-image: url(/assets/icons/winter.png);
-  background-repeat: repeat-y;
-  height: 1000px;
-}
-
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .border {
-    background-image: url(/assets/icons/winterSmall.png);
+    background-image: url(/assets/icons/winter.png);
+    background-size: 100%;
     background-repeat: repeat-y;
-    height: 1000px;
+    height: 100vh;
   }
 }
