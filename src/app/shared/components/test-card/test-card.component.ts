@@ -32,6 +32,7 @@ export interface TestCardCompleteEmission {
 export class TestCardComponent implements OnInit, ControlValueAccessor {
   private _render = true;
   private _note = '';
+  incorrect = false;
   vTypes = TestCardVisualizationType;
   imgSrc: string;
 
@@ -71,6 +72,10 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
 
   ngOnInit() {
     this.validateFields();
+  }
+
+  toggleIncorrect() {
+    this.incorrect = !this.incorrect;
   }
 
   protected get render(): boolean {

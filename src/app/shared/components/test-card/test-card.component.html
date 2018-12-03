@@ -1,5 +1,5 @@
 <div *ngIf="render">
-  <mat-card [ngClass]="{active: active}">
+  <mat-card [ngClass]="{active: active, incorrect: incorrect}" (click)="toggleIncorrect()">
     <mat-card-header *ngIf="!!title">
       <mat-card-title>
         <h3 class="title">{{title}}</h3>
