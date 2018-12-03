@@ -1,21 +1,27 @@
-<div class="col-12 grid-noGutter-center-bottom nav-container">
-  <div class="col-5">
-    <img src="../../assets/icons/logo.svg" width="50%">
-  </div>
-  <div class="col-5">
-    <div class="grid-bottom-noGutter-right">
-      <div class="col-7_lg-8_md-12 teacher-name"><h2>Mr. Garrison</h2></div>
-      <div class="col-3_lg-4_md-12">
-        <button class="logout" mat-stroked-button routerLink="/">Logout</button>
+<div class="grid-noGutter">
+  <div class="col-2 border"></div>
+  <div class="col content">
+    <div class="col-12 grid-noGutter-center-bottom nav-container">
+      <div class="col-5">
+        <img src="../../assets/icons/logo.svg" width="50%">
+      </div>
+      <div class="col-5">
+        <div class="grid-bottom-noGutter-right">
+          <div class="col-7_lg-8_md-12 teacher-name"><h2>Mr. Garrison</h2></div>
+          <div class="col-3_lg-4_md-12">
+            <button class="logout" mat-stroked-button routerLink="/">Logout</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!testActive" class="col-10">
+        <letters-navbar [navItems]="navItems"></letters-navbar>
+      </div>
+    </div>
+    <div class="grid-center">
+      <div class="col-10">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
-  <div *ngIf="!testActive" class="col-10">
-    <letters-navbar [navItems]="navItems"></letters-navbar>
-  </div>
-</div>
-<div class="grid-center">
-  <div class="col-10">
-    <router-outlet></router-outlet>
-  </div>
+  <div class="col-2 border"></div>
 </div>
