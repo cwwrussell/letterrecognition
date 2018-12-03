@@ -1,0 +1,27 @@
+content-container {
+  //display: flex;
+  //align-items: center;
+}
+
+.question-content {
+  &:not(.tall) {
+    font-size: 3em;
+    min-height: 50px;
+  }
+  &.tall {
+    font-size: 3.5em;
+    min-height: 70px;
+  }
+  text-align: center;
+}
+
+mat-card-footer {
+  mat-form-field {
+    display: block;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+

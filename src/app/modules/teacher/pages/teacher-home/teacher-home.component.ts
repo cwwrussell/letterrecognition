@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, QueryList} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {MatOption} from '@angular/material';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'letters-teacher-home',
@@ -7,9 +9,13 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./teacher-home.component.scss']
 })
 export class TeacherHomeComponent implements OnInit {
+  homeForm: FormGroup;
+  testForm: FormGroup;
+  disableTestButton: boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private fb: FormBuilder) {
   }
 
   studentId = 'Select Student';
@@ -31,22 +37,60 @@ export class TeacherHomeComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.disableTestButton = true;
+    this.buildForm();
+    this.testForm.valueChanges.subscribe(() => {
+      const testId = this.testForm.get('testId').value;
+      const studentId = this.testForm.get('studentId').value;
+      this.disableTestButton = !testId || !studentId;
+    });
+  }
+
+  buildForm() {
+    this.testForm = this.fb.group({
+      testId: new FormControl(),
+      studentId: new FormControl()
+    });
+    this.homeForm = this.fb.group({
+      test: this.testForm,
+      studentData: new FormControl()
+    });
   }
 
   goToTest() {
-    this.router.navigate(['..', 'test', this.testId === 'Select Test' ? '93939399222' : this.testId], {relativeTo: this.activatedRoute});
+    const testId = this.testForm.get('testId').value;
+    const studentId = this.testForm.get('studentId').value;
+    this.router.navigate(
+      ['..', 'test', testId, studentId],
+      {relativeTo: this.activatedRoute}
+    );
   }
+
   goToStudentData() {
-    this.router.navigate(['..', 'data', this.studentId === 'Select Student' ? '939393' : this.studentId], {relativeTo: this.activatedRoute});
+    this.router.navigate(
+      ['..', 'data', this.studentId === 'Select Student' ? '939393' : this.studentId],
+      {relativeTo: this.activatedRoute}
+    );
   }
+
   goToClassData() {
-    this.router.navigate(['..', 'data'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['..', 'data'],
+      {relativeTo: this.activatedRoute}
+    );
   }
+
   goToSettings() {
-    this.router.navigate(['..', 'settings'], {relativeTo: this.activatedRoute});
+    this.router.navigate(
+      ['..', 'settings'],
+      {relativeTo: this.activatedRoute}
+    );
   }
+
   addStudent() {
-    this.router.navigate(['..', 'settings'], {relativeTo: this.activatedRoute});
+    this.router.navigate(
+      ['..', 'settings'],
+      {relativeTo: this.activatedRoute}
+    );
   }
 }
 

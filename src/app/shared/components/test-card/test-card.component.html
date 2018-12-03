@@ -1,0 +1,19 @@
+<div *ngIf="render">
+  <mat-card [ngClass]="{active: active}">
+    <mat-card-header *ngIf="!!title">
+      <mat-card-title>
+        <h3 class="title">{{title}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img *ngIf="visualizationType === vTypes.IMAGE" mat-card-image [src]="imgSrc">
+    <mat-card-content *ngIf="visualizationType === vTypes.TEXT" class="content-container">
+      <div [ngClass]="{tall: !!title, 'question-content': true}">{{visualizationData}}</div>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-form-field appearance="fill" class="note-input">
+        <mat-label>Notes</mat-label>
+        <input matInput [value]="note">
+      </mat-form-field>
+    </mat-card-footer>
+  </mat-card>
+</div>

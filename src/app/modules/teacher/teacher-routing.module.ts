@@ -52,7 +52,7 @@ const routes: Routes = [
           }
         ]
       }, {
-        path: 'test/:studentId',
+        path: 'test/:testId/:studentId',
         children: [
           {
             path: '',

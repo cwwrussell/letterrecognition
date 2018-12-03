@@ -13,7 +13,6 @@ export class TestResolverService implements Resolve<Array<TestQuestion>> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<TestQuestion>> {
     const ts = new TestService();
-    console.log('params: ', route.params);
     const testId = route.params['testId'];
     return of(ts.getTestQuestions(testId));
   }

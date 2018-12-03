@@ -10,10 +10,11 @@ export interface DateRange {
 
 export interface TestQuestion {
   testQuestionId: string;
+  questionText: string;
   correctAnswer: any;
-  response: any;
+  response?: any;
   notes?: string | Array<string>;
-  options: any;
+  options?: any;
   type: TestQuestionType;
   isCorrect?: (answer: any) => boolean;
   visualize?: boolean;
@@ -59,9 +60,13 @@ export class TestService {
     }
   }
 
-  buildTestQuestions(upperCase: boolean = true): Array<TestQuestion> {
+  buildTestQuestions(upperCase: boolean = true, randomize: boolean = true): Array<TestQuestion> {
     const letters = upperCase ? this.upperCase.split('') : this.lowerCase.split('');
+    if (randomize) {
+      this.shuffle(letters);
+    }
     return letters.map(letter => ({
+      questionText: letter,
       testQuestionId: letter,
       correctAnswer: letter,
       response: null,
@@ -69,5 +74,17 @@ export class TestService {
       type: TestQuestionType.VOCAL,
       visualize: true,
     }));
+  }
+
+  /**
+   * Shuffles array in place. ES6 version
+   * @param {Array} a items An array containing the items.
+   */
+  shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
   }
 }
