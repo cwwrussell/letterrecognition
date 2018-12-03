@@ -27,6 +27,7 @@ import {NavCardModule} from '../../shared/components/nav-card/nav-card.module';
 import {TeacherAddStudentComponent} from './pages/teacher-add-student/teacher-add-student.component';
 import {TestCardModule} from '../../shared/components/test-card/test-card.module';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {StudentService} from '../student/student.service';
 
 @NgModule({
   imports: [
@@ -61,7 +62,8 @@ import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   entryComponents: [TeacherAddStudentComponent],
   providers: [
-    FormBuilder
+    FormBuilder,
+    StudentService,
   ]
 })
 export class TeacherModule {

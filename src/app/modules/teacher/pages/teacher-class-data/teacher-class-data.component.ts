@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import {ActivatedRoute, Router} from '@angular/router';
+import {StudentService} from '../../../student/student.service';
 
 @Component({
   selector: 'letters-teacher-class-data',
@@ -21,11 +22,14 @@ export class TeacherClassDataComponent implements OnInit {
   ];
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private ss: StudentService) {
   }
 
   goToStudentData(student: string) {
-    if (student) this.studentId = student;
+    if (student) {
+      this.studentId = student;
+    }
     this.router.navigate([this.studentId === 'Select Student' ? '939393' : this.studentId], {relativeTo: this.activatedRoute});
   }
 
