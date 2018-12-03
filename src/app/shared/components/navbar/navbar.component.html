@@ -1,8 +1,9 @@
 <div *ngIf="render">
   <div class="grid nav-buttons">
     <div class="col-12 grid soft-corners">
-      <div *ngFor="let navItem of navItems; let first = first; let last = last;" class="col-4_xs-12 nav-button" routerLink="{{navItem.routeTo}}" routerLinkActive="active"
-      [ngClass]="{'first-item': first, 'last-item': last}" mat-ripple>
+      <div *ngFor="let navItem of navItems; let first = first; let last = last;" [ngClass]="{'first-item': first, 'last-item': last}"
+           class="col-4_xs-12 nav-button" mat-ripple
+           routerLink="{{navItem.routeTo}}" routerLinkActive="active">
         {{navItem.label}}
       </div>
     </div>

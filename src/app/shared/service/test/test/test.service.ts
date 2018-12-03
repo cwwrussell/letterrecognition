@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 export enum TestQuestionType {VOCAL}
+
 export enum Term {FALL, WINTER, SPRING, SUMMER}
 
 export interface DateRange {
@@ -31,8 +32,11 @@ export interface TestResult {
 }
 
 export interface Test {
-  testQuestions: Array<TestQuestion>;
-  testName: string;
+  testQuestions?: Array<TestQuestion>;
+  testName?: string;
+  testNumber?: number;
+  name?: string;
+  active?: string;
 }
 
 @Injectable({
@@ -42,7 +46,8 @@ export class TestService {
   private readonly lowerCase = 'abcdefghijklmnopqrstuvwxyz';
   private readonly upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-  constructor() { }
+  constructor() {
+  }
 
   getTestQuestions(testId: string): Test {
     switch (testId) {

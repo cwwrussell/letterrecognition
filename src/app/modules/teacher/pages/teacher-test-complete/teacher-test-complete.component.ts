@@ -7,21 +7,20 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./teacher-test-complete.component.scss']
 })
 export class TeacherTestCompleteComponent implements OnInit {
-
-  constructor(private activatedRoute: ActivatedRoute,
-              private router: Router) {
-  }
+  teacherId = '123948';
 
   studentId = null;
-
   studentList = [
     {value: 'Chris', viewValue: '11111111'},
     {value: 'Heather', viewValue: '222222222'},
     {value: 'John', viewValue: '33333333333'},
     {value: 'Cristian', viewValue: '4444444444'},
   ];
-
   breakpoint;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router) {
+  }
 
   ngOnInit() {
     this.breakpoint = (window.innerWidth <= 870) ? 1 : 2;
@@ -38,12 +37,11 @@ export class TeacherTestCompleteComponent implements OnInit {
   }
 
   goHome() {
-    const teacherId = '123948';
-    this.router.navigate(['teacher', teacherId, 'home']);
+    this.router.navigate(['teacher', this.teacherId, 'home']);
   }
 
   goToStudentData() {
-    this.router.navigate(['../../../', 'data', '1212121212'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['teacher', this.teacherId, 'data']);
   }
 }
 

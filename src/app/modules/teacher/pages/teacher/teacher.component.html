@@ -6,11 +6,11 @@
     <div class="grid-bottom-noGutter-right">
       <div class="col-7_lg-8_md-12 teacher-name"><h2>Mr. Garrison</h2></div>
       <div class="col-3_lg-4_md-12">
-        <button mat-stroked-button class="logout" routerLink="/">Logout</button>
+        <button class="logout" mat-stroked-button routerLink="/">Logout</button>
       </div>
     </div>
   </div>
-  <div class="col-10" *ngIf="!testActive">
+  <div *ngIf="!testActive" class="col-10">
     <letters-navbar [navItems]="navItems"></letters-navbar>
   </div>
 </div>

@@ -10,28 +10,27 @@ export enum NavCardLoadState {
   styleUrls: ['./nav-card.component.scss']
 })
 export class NavCardComponent implements OnInit {
-  _render: boolean;
   public loadStates = NavCardLoadState;
-
   @Input()
   title: string;
-
   @Input()
   buttonText = 'Go';
-
   @Input()
   linkTo: string | Array<string> = '';
-
   @Input()
   imgSrc: string;
-
   @Input()
   loadState: NavCardLoadState;
-
   @Input()
   loadingMessage: string;
 
   constructor() {
+  }
+
+  _render: boolean;
+
+  get render(): boolean {
+    return this._render;
   }
 
   ngOnInit() {
@@ -98,9 +97,5 @@ export class NavCardComponent implements OnInit {
     } else {
       return this.loadState != null || !!this.imgSrc;
     }
-  }
-
-  get render(): boolean {
-    return this._render;
   }
 }

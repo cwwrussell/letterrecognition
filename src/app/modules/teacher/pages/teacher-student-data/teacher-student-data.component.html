@@ -1,11 +1,11 @@
 <div class="dropdown">
-<span>Student Grades</span>
-<mat-select placeholder="Select Student" [(value)]='studentId'>
-      <mat-option *ngFor="let student of studentList" [(value)]='student.viewValue'>
-        {{student.value}}
-      </mat-option>
-    </mat-select>
-  </div>
+  <span>Student Grades</span>
+  <mat-select [(value)]='studentId' placeholder="Select Student">
+    <mat-option *ngFor="let student of studentList" [(value)]='student.viewValue'>
+      {{student.value}}
+    </mat-option>
+  </mat-select>
+</div>
 <div class="table">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" flex>
     <ng-container matColumnDef='name'>

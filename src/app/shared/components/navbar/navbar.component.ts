@@ -11,21 +11,22 @@ export interface NavItem {
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  _render = true;
-
   @Input()
   navItems: NavItem[];
 
-  constructor() { }
+  constructor() {
+  }
+
+  _render = true;
+
+  get render(): boolean {
+    return this._render;
+  }
 
   ngOnInit() {
     if (this.navItems == null || this.navItems.length === 0) {
       console.error(typeof this + 'cannot be empty');
       setTimeout(() => this._render = false, 0);
     }
-  }
-
-  get render(): boolean {
-    return this._render;
   }
 }

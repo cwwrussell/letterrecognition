@@ -9,21 +9,26 @@
       .mat-card-content {
         margin-top: 1em !important;
       }
+
       &.incorrect {
         background-color: #ff4f38;
         color: white;
+
         input {
           color: black;
         }
       }
+
       &:not(.incorrect) {
         &.active {
           background-color: mat-color($accent, A100) !important;
         }
+
         &:not(.active) {
           background-color: mat-color($primary, 100) !important;
         }
       }
+
       .mat-form-field-appearance-fill .mat-form-field-flex {
         background-color: white !important;
       }

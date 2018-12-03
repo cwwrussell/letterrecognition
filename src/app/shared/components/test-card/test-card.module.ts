@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {TestCardComponent} from './test-card.component';
 import {MatCardModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
@@ -17,4 +17,5 @@ import {MatInputModule} from '@angular/material/input';
     TestCardComponent,
   ],
 })
-export class TestCardModule { }
+export class TestCardModule {
+}

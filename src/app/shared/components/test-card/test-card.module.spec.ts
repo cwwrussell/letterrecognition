@@ -1,4 +1,4 @@
-import { TestCardModule } from './test-card.module';
+import {TestCardModule} from './test-card.module';
 
 describe('TestCardModule', () => {
   let testCardModule: TestCardModule;

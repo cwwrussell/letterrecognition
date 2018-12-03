@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialogConfig, MatTableDataSource} from '@angular/material';
 import {MatDialog} from '@angular/material/dialog';
 import {TeacherAddStudentComponent} from '../teacher-add-student/teacher-add-student.component';
+import {Test} from '../../../../shared/service/test/test/test.service';
 
 @Component({
   selector: 'letters-teacher-settings',
@@ -11,18 +12,16 @@ import {TeacherAddStudentComponent} from '../teacher-add-student/teacher-add-stu
 
 export class TeacherSettingsComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
-
   studentColumns = ['position', 'name', 'active', 'actions'];
   studentData = new MatTableDataSource<Student>(STUDENT_DATA);
-
   testColumns = ['testNumber', 'name', 'active'];
   testData = new MatTableDataSource<Test>(TEST_DATA);
-
   themeColumns = ['theme', 'active'];
   themeData = new MatTableDataSource<Theme>(THEME_DATA);
-
   breakpoint;
+
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this.breakpoint = (window.innerWidth <= 870) ? 1 : 2;
@@ -40,12 +39,6 @@ export class TeacherSettingsComponent implements OnInit {
 
 export interface Student {
   position: number;
-  name: string;
-  active: string;
-}
-
-export interface Test {
-  testNumber: number;
   name: string;
   active: string;
 }

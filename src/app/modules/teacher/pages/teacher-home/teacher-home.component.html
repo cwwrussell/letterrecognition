@@ -1,18 +1,18 @@
-<div class="col-12 grid-center" [formGroup]="homeForm">
+<div [formGroup]="homeForm" class="col-12 grid-center">
   <!-- Test -->
-  <div class="col-4_md-5_sm-8 nav-container" [formGroup]="testForm">
+  <div [formGroup]="testForm" class="col-4_md-5_sm-8 nav-container">
     <mat-card>
       <mat-card-title>Test</mat-card-title>
       <mat-divider></mat-divider>
       <mat-card-content flex>
         <h4>Choose Student</h4>
-        <mat-select placeholder="Select Student" formControlName="studentId">
+        <mat-select formControlName="studentId" placeholder="Select Student">
           <mat-option *ngFor="let student of studentList" [(value)]='student.viewValue'>
             {{student.value}}
           </mat-option>
         </mat-select>
         <h4>Choose test</h4>
-        <mat-select placeholder="Select Test" formControlName="testId">
+        <mat-select formControlName="testId" placeholder="Select Test">
           <mat-option *ngFor="let test of testList" [(value)]='test.viewValue'>
             {{test.value}}
           </mat-option>
@@ -21,10 +21,10 @@
       <div class="card-footer">
         <mat-card-actions>
           <button
-            mat-raised-button
-            color="primary"
             (click)="goToTest()"
             [disabled]="disableTestButton"
+            color="primary"
+            mat-raised-button
           >Start
           </button>
         </mat-card-actions>
@@ -39,7 +39,7 @@
       <mat-divider></mat-divider>
       <mat-card-content flex>
         <h4>Choose Student</h4>
-        <mat-select placeholder="Select Student" [(value)]='studentId'>
+        <mat-select [(value)]='studentId' placeholder="Select Student">
           <mat-option *ngFor="let student of studentList" [(value)]='student.viewValue'>
             {{student.value}}
           </mat-option>
@@ -47,10 +47,10 @@
       </mat-card-content>
       <div class="card-footer">
         <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="goToStudentData()">View Student</button>
+          <button (click)="goToStudentData()" color="primary" mat-raised-button>View Student</button>
         </mat-card-actions>
         <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="goToClassData()">All Students</button>
+          <button (click)="goToClassData()" color="primary" mat-raised-button>All Students</button>
         </mat-card-actions>
       </div>
     </mat-card>
@@ -66,10 +66,10 @@
       </mat-card-content>
       <div class="card-footer">
         <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="addStudent()">Add Student</button>
+          <button (click)="addStudent()" color="primary" mat-raised-button>Add Student</button>
         </mat-card-actions>
         <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="goToSettings()">Modify Test</button>
+          <button (click)="goToSettings()" color="primary" mat-raised-button>Modify Test</button>
         </mat-card-actions>
       </div>
     </mat-card>

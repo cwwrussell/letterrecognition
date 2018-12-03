@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 export interface Student {
   studentId: string | number;
@@ -11,7 +11,8 @@ export interface Student {
 })
 export class StudentService {
 
-  constructor() { }
+  constructor() {
+  }
 
   getStudent(studentId: string): Student {
     switch (studentId) {
@@ -43,6 +44,7 @@ export class StudentService {
         return null;
     }
   }
+
 // {value: 'Chris', viewValue: '11111111'},
 // {value: 'Heather', viewValue: '222222222'},
 // {value: 'John', viewValue: '33333333333'},

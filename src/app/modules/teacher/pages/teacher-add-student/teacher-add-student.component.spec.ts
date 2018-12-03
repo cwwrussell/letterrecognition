@@ -8,9 +8,9 @@ describe('TeacherAddStudentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TeacherAddStudentComponent ]
+      declarations: [TeacherAddStudentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

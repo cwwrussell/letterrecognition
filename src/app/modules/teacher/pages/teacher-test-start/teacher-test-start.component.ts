@@ -29,7 +29,6 @@ export class TeacherTestStartComponent implements OnInit {
   }
 
 
-
   startTest() {
     this.router.navigate(['test'], {relativeTo: this.activatedRoute});
   }

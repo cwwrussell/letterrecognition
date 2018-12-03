@@ -1,7 +1,7 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TestResolverService} from '../../../../shared/resolver/test/test-resolver.service';
-import {TestQuestion} from '../../../../shared/service/test/test-builder/test.service';
+import {TestQuestion} from '../../../../shared/service/test/test/test.service';
 import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {TestCardVisualizationType} from '../../../../shared/components/test-card/test-card.component';
 import {fromEvent} from 'rxjs';
@@ -37,9 +37,9 @@ export class TeacherTestViewComponent implements OnInit {
   }>;
   currentQuestionPos = 0;
   keyPressListener: any;
+  timeElapsed = '00:00';
   private secondsElapsed = 0;
   private minutesElapsed = 0;
-  timeElapsed = '00:00';
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,

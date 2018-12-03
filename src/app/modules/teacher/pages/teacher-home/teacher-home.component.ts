@@ -1,6 +1,5 @@
-import {Component, OnInit, QueryList} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatOption} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -12,29 +11,25 @@ export class TeacherHomeComponent implements OnInit {
   homeForm: FormGroup;
   testForm: FormGroup;
   disableTestButton: boolean;
-
-  constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,
-              private fb: FormBuilder) {
-  }
-
   studentId = 'Select Student';
-
   studentList = [
     {value: 'Chris', viewValue: '11111111'},
     {value: 'Heather', viewValue: '222222222'},
     {value: 'John', viewValue: '33333333333'},
     {value: 'Cristian', viewValue: '4444444444'},
   ];
-
   testId = 'Select Test';
-
   testList = [
     {value: 'Lowercase ABCs Fall', viewValue: '1111'},
     {value: 'Uppercase ABCs Fall', viewValue: '2222'},
     {value: 'Lowercase ABcs Spring', viewValue: '3333'},
     {value: 'Uppercase ABCs Spring', viewValue: '4444'},
   ];
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private fb: FormBuilder) {
+  }
 
   ngOnInit() {
     this.disableTestButton = true;
