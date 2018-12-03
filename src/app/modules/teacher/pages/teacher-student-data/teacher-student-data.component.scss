@@ -1,11 +1,11 @@
 .mat-cell {
-  font-size: 1.25em;
+  font-size: .9em;
   padding: 0 .5em;
   border: .5px solid grey;
 }
 
 .mat-header-cell {
-  font-size: 1.25em;
+  font-size: .9em;
   padding: 0 .5em;
   border: .5px solid grey;
 }
@@ -15,7 +15,7 @@ td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:
 }
 
 tr.mat-footer-row, tr.mat-row, tr.mat-header-row {
-  height: 3.5em;
+  height: 2em;
 }
 
 .mat-select {
@@ -48,6 +48,6 @@ span {
 
 @media (max-width: 1024px) {
   .table {
-    font-size: 78%;
+    font-size: 55%;
   }
 }

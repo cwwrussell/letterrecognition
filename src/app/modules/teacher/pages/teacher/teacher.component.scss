@@ -13,3 +13,12 @@ h2 {
 .teacher-name {
   text-align: right;
 }
+
+@media (min-width: 1024px) {
+  .border {
+    background-image: url(/assets/icons/winter.png);
+    background-size: 100%;
+    background-repeat: repeat-y;
+    height: 100vh;
+  }
+}
