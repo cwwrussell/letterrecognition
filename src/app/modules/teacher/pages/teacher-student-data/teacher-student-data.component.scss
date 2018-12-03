@@ -45,3 +45,9 @@ span {
 .dropdown {
   font-size: .5em;
 }
+
+@media (max-width: 1024px) {
+  .table {
+    font-size: 78%;
+  }
+}
