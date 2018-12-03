@@ -1,6 +1,6 @@
 <div class="grid" [formGroup]="testForm">
-  <div class="col-9 grid-center">
-    <div class="col-3_lg-4_md-6_xs-12" *ngFor="let control of testForm.controls['testQuestionsForm'].controls; let i = index;">
+  <div class="col-9_md-12 grid">
+    <div class="col-3_lg-4_sm-6_xs-12" *ngFor="let control of testForm.controls['testQuestionsForm'].controls; let i = index;">
       <letters-test-card
         [formControl]="control"
         [visualize]="qList[i].visualize"
@@ -10,7 +10,7 @@
       ></letters-test-card>
     </div>
   </div>
-  <div class="col-3">
+  <div class="col-3_md-12">
     Panel here
   </div>
 </div>
