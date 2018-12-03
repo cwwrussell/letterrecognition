@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot} from '@angular/router';
 import {TestResolverService} from '../../../../shared/resolver/test/test-resolver.service';
 import {TestQuestion} from '../../../../shared/service/test/test/test.service';
 import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {TestCardVisualizationType} from '../../../../shared/components/test-card/test-card.component';
-import {fromEvent} from 'rxjs';
+import {fromEvent, Observable, of} from 'rxjs';
 import {StudentResolverService} from '../../../../shared/resolver/student/student-resolver.service';
 import {Student} from '../../../../shared/service/student/student.service';
 
@@ -21,7 +21,7 @@ interface TeacherTestViewData {
   templateUrl: './teacher-test-view.component.html',
   styleUrls: ['./teacher-test-view.component.scss']
 })
-export class TeacherTestViewComponent implements OnInit {
+export class TeacherTestViewComponent implements OnInit, CanDeactivate<TeacherTestViewComponent> {
   testQuestions: Array<TestQuestion>;
   testForm: FormGroup;
   testQuestionsForm: FormArray;
@@ -40,6 +40,10 @@ export class TeacherTestViewComponent implements OnInit {
   timeElapsed = '00:00';
   private secondsElapsed = 0;
   private minutesElapsed = 0;
+  private testComplete = false;
+  confirmMessage = 'If you leave the current test session, you will lose any unsaved data. ' +
+    'Are you sure you want to end the test session?';
+  confirmTitle = 'End test session?';
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -109,6 +113,7 @@ export class TeacherTestViewComponent implements OnInit {
   }
 
   completeTest() {
+    this.testComplete = true;
     this.router.navigate(['..', 'complete'], {relativeTo: this.activatedRoute});
   }
 
@@ -133,8 +138,8 @@ export class TeacherTestViewComponent implements OnInit {
     });
   }
 
-  getFormValue() {
-    return null;
+  canDeactivate(): boolean {
+    return this.testComplete;
   }
 }
 
