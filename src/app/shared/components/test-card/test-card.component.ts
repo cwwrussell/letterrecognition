@@ -58,13 +58,13 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
 
   private _render = true;
 
-  protected get render(): boolean {
+  get render(): boolean {
     return this._render;
   }
 
-  protected set render(render: boolean) {
-    setTimeout(() => this._render = render, 0);
-  }
+  // set render(render: boolean) {
+  //   setTimeout(() => this._render = render, 0);
+  // }
 
   protected get visualizationData(): string {
     if (this.visualizationParams != null && !!this.visualizationParams.text) {
@@ -104,7 +104,7 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
     // invalid test question
     if (this.testQuestion == null) {
       console.error('TestCard.testQuestion must not be empty.');
-      this.render = false;
+      setTimeout(() => this._render = false, 0);
       return;
     }
 
@@ -112,7 +112,7 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
       // invalid visualization type
       if (this.visualizationType == null || TestCardVisualizationType[this.visualizationType] == null) {
         console.error('TestCard.visualizationType must not be ' + this.visualizationType + '.');
-        this.render = false;
+        setTimeout(() => this._render = false, 0);
         return;
       }
 
@@ -122,7 +122,7 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
         if (this.visualizationType === TestCardVisualizationType.IMAGE &&
           !this.visualizationParams.imgSrc) {
           console.error('TestCard.visualizationParams.imgSrc must not be null when trying to visualize an image.');
-          this.render = false;
+          setTimeout(() => this._render = false, 0);
         }
         // invalid visualization text
         if ((this.testQuestion != null && !this.testQuestion.questionText) &&
@@ -130,7 +130,7 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
           console.error(`[TestCard]: To visualize text, one valid text member of the following types must exist:
             \n1: TestQuestion.questionText
             \n2: TestCard.visualizationParams.text`);
-          this.render = false;
+          setTimeout(() => this._render = false, 0);
         }
       }
     }

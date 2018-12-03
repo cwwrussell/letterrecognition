@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot, CanDeactivate, Router, RouterStateSnapshot} from '@angular/router';
+import {ActivatedRoute, CanDeactivate, Router} from '@angular/router';
 import {TestResolverService} from '../../../../shared/resolver/test/test-resolver.service';
 import {TestQuestion} from '../../../../shared/service/test/test/test.service';
-import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {TestCardVisualizationType} from '../../../../shared/components/test-card/test-card.component';
-import {fromEvent, Observable, of} from 'rxjs';
+import {fromEvent} from 'rxjs';
 import {StudentResolverService} from '../../../../shared/resolver/student/student-resolver.service';
 import {Student} from '../../../../shared/service/student/student.service';
 
@@ -29,7 +29,7 @@ export class TeacherTestViewComponent implements OnInit, CanDeactivate<TeacherTe
   student: Student;
   qList: Array<{
     sequencePos: number;
-    formControl: AbstractControl;
+    formControl: FormControl;
     visualize: boolean;
     formControlName: string | number;
     testQuestion: TestQuestion;
@@ -41,9 +41,6 @@ export class TeacherTestViewComponent implements OnInit, CanDeactivate<TeacherTe
   private secondsElapsed = 0;
   private minutesElapsed = 0;
   private testComplete = false;
-  confirmMessage = 'If you leave the current test session, you will lose any unsaved data. ' +
-    'Are you sure you want to end the test session?';
-  confirmTitle = 'End test session?';
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -51,6 +48,8 @@ export class TeacherTestViewComponent implements OnInit, CanDeactivate<TeacherTe
   }
 
   ngOnInit() {
+    this.testForm = this.fb.group({});
+    this.testQuestionsForm = this.fb.array([]);
     this.keyPressListener = fromEvent(document, 'keydown').subscribe(e => {
       if (e['key'] === 'ArrowRight') {
         if (this.currentQuestionPos >= 0 && this.currentQuestionPos < this.qList.length - 1) {
@@ -63,7 +62,6 @@ export class TeacherTestViewComponent implements OnInit, CanDeactivate<TeacherTe
         }
       }
     });
-    // this.buildForm();
     this.activatedRoute.data.subscribe((data: TeacherTestViewData) => {
       console.log('route data: ', data);
       if (data == null) {
@@ -140,6 +138,10 @@ export class TeacherTestViewComponent implements OnInit, CanDeactivate<TeacherTe
 
   canDeactivate(): boolean {
     return this.testComplete;
+  }
+
+  getTestQuestionFormControls() {
+    return this.testQuestionsForm.controls;
   }
 }
 

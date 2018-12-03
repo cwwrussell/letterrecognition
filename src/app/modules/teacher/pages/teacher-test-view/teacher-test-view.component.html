@@ -1,6 +1,6 @@
 <div [formGroup]="testForm" class="grid">
   <div class="col-9_md-12 grid">
-    <div *ngFor="let control of testForm.controls['testQuestionsForm'].controls; let i = index;"
+    <div *ngFor="let control of getTestQuestionFormControls; let i = index;"
          class="col-3_lg-4_sm-6_xs-12">
       <letters-test-card
         [active]="currentQuestionPos === i"

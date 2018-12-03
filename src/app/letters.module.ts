@@ -1,4 +1,4 @@
-import {BrowserAnimationsModule} from '@angular/platform-browser/Animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 
 import {LettersRoutingModule} from './letters-routing.module';
