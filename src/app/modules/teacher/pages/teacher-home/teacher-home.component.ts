@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {MatDialog, MatDialogConfig} from '@angular/material';
+import {TeacherAddStudentComponent} from '../teacher-add-student/teacher-add-student.component';
 
 @Component({
   selector: 'letters-teacher-home',
@@ -28,7 +30,8 @@ export class TeacherHomeComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -82,10 +85,8 @@ export class TeacherHomeComponent implements OnInit {
   }
 
   addStudent() {
-    this.router.navigate(
-      ['..', 'settings'],
-      {relativeTo: this.activatedRoute}
-    );
+    const dialogConfig = new MatDialogConfig();
+    this.dialog.open(TeacherAddStudentComponent, dialogConfig);
   }
 }
 

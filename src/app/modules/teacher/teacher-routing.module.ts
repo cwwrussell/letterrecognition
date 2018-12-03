@@ -9,6 +9,7 @@ import {route as ClassData} from './pages/teacher-class-data/teacher-class-data.
 import {route as Settings} from './pages/teacher-settings/teacher-settings.component';
 import {route as Login} from './pages/teacher-login/teacher-login.component';
 import {route as TestView} from './pages/teacher-test-view/teacher-test-view.component';
+import {UnfinishedTestGuard} from '../../shared/service/route-guard/unfinished-test-guard.service';
 
 
 const routes: Routes = [
@@ -62,6 +63,7 @@ const routes: Routes = [
           }, {
             path: 'test',
             component: TestView.component,
+            canDeactivate: [UnfinishedTestGuard],
             data: TestView.data,
             resolve: TestView.resolve
           }, {

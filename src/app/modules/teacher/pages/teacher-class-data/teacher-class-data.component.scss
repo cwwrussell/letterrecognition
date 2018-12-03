@@ -26,8 +26,10 @@ tr.mat-footer-row, tr.mat-row, tr.mat-header-row {
   background-color: #EEEEEE;
 }
 
-.table {
-  margin-right: 8%;
+@media (max-width: 1024px) {
+  .table {
+    font-size: 80%;
+  }
 }
 
 @media (max-width: 1024px) {
