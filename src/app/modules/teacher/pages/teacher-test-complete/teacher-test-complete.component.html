@@ -14,7 +14,7 @@
         </mat-select>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" style="width: 100%" (click)="chooseStudentAndRedoTest()">Start</button>
+        <button mat-raised-button color="primary" style="width: 100%" (click)="chooseStudentAndRedoTest()" [disabled]="!studentId">Start</button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>

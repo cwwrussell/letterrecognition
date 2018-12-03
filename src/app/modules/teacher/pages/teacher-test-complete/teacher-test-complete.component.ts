@@ -12,7 +12,7 @@ export class TeacherTestCompleteComponent implements OnInit {
               private router: Router) {
   }
 
-  studentId = 'Select Student';
+  studentId = null;
 
   studentList = [
     {value: 'Chris', viewValue: '11111111'},
@@ -38,7 +38,8 @@ export class TeacherTestCompleteComponent implements OnInit {
   }
 
   goHome() {
-    this.router.navigate(['/']);
+    const teacherId = '123948';
+    this.router.navigate(['teacher', teacherId, 'home']);
   }
 
   goToStudentData() {

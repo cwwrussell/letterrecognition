@@ -1,12 +1,12 @@
 <div *ngIf="render">
-  <mat-card [ngClass]="{active: active, incorrect: incorrect}" (click)="toggleIncorrect()">
-    <mat-card-header *ngIf="!!title">
+  <mat-card [ngClass]="{active: active, incorrect: incorrect}">
+    <mat-card-header *ngIf="!!title" (click)="toggleIncorrect($event)">
       <mat-card-title>
         <h3 class="title">{{title}}</h3>
       </mat-card-title>
     </mat-card-header>
     <img *ngIf="visualizationType === vTypes.IMAGE" mat-card-image [src]="imgSrc">
-    <mat-card-content *ngIf="visualizationType === vTypes.TEXT" class="content-container">
+    <mat-card-content *ngIf="visualizationType === vTypes.TEXT" class="content-container" (click)="toggleIncorrect($event)">
       <div [ngClass]="{tall: !!title, 'question-content': true}">{{visualizationData}}</div>
     </mat-card-content>
     <mat-card-footer>

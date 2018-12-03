@@ -2,6 +2,7 @@ letters-nav-card {
   mat-card {
     .mat-card-header-text {
       width: 100%;
+
       h3 {
         font-size: 2em;
         margin: 5%;
@@ -10,8 +11,42 @@ letters-nav-card {
   }
 }
 
-letters-test-card {
-  //.mat-form-field-wrapper {
-  //  margin-bottom: -1.5em !important;
-  //}
+letters-teacher-test-view {
+  .teacher-test-panel {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    mat-card-header {
+      .mat-card-header-text {
+        width: 100%;
+        text-align: center;
+
+        h1 {
+          margin: 0;
+        }
+      }
+
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    mat-card-content {
+      border-bottom: 1px solid #CCCCCC;
+      padding: 8px !important;
+      mat-form-field {
+        width: 100%;
+        textarea {
+          width: 100%;
+          min-height: 80px;
+        }
+      }
+    }
+
+    mat-card-actions {
+      padding: 0 1em 0.25em 1em !important;
+      button {
+        width: 100%;
+      }
+    }
+  }
 }
+

@@ -32,8 +32,7 @@ export interface TestResult {
 
 export interface Test {
   testQuestions: Array<TestQuestion>;
-  dateStarted: Date;
-  dateCompleted: Date;
+  testName: string;
 }
 
 @Injectable({
@@ -45,16 +44,28 @@ export class TestService {
 
   constructor() { }
 
-  getTestQuestions(testId: string): Array<TestQuestion> {
+  getTestQuestions(testId: string): Test {
     switch (testId) {
       case '1111':
-        return this.buildTestQuestions(false);
+        return {
+          testQuestions: this.buildTestQuestions(false),
+          testName: 'Lowercase ABCs Fall'
+        };
       case '2222':
-        return this.buildTestQuestions();
+        return {
+          testQuestions: this.buildTestQuestions(),
+          testName: 'Uppercase ABCs Fall'
+        };
       case '3333':
-        return this.buildTestQuestions(false);
+        return {
+          testQuestions: this.buildTestQuestions(false),
+          testName: 'Lowercase ABcs Spring'
+        };
       case '4444':
-        return this.buildTestQuestions();
+        return {
+          testQuestions: this.buildTestQuestions(),
+          testName: 'Uppercase ABCs Spring'
+        };
       default:
         return null;
     }

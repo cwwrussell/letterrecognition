@@ -1,6 +1,7 @@
 <div class="grid" [formGroup]="testForm">
   <div class="col-9_md-12 grid">
-    <div class="col-3_lg-4_sm-6_xs-12" *ngFor="let control of testForm.controls['testQuestionsForm'].controls; let i = index;">
+    <div class="col-3_lg-4_sm-6_xs-12"
+         *ngFor="let control of testForm.controls['testQuestionsForm'].controls; let i = index;">
       <letters-test-card
         [formControl]="control"
         [visualize]="qList[i].visualize"
@@ -11,6 +12,25 @@
     </div>
   </div>
   <div class="col-3_md-12">
-    Panel here
+    <mat-card class="teacher-test-panel">
+      <mat-card-header>
+        <mat-card-title class="test-timer">
+          <h1>{{timeElapsed}}</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{student.firstName + ' ' + student.lastName}}</h2>
+        <h2 *ngIf="!!testName">{{testName}}</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Notes</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button routerLink="../complete" color="primary"
+                [disabled]="currentQuestionPos !== qList.length - 1"
+                mat-raised-button>Done</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

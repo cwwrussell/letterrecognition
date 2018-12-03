@@ -36,6 +36,7 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
   vTypes = TestCardVisualizationType;
   imgSrc: string;
 
+
   @Input()
   visualize: boolean;
 
@@ -59,14 +60,6 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
     return this._note;
   }
 
-  set note(note: string) {
-    // make sure change are picked up by watcher
-    setTimeout(() => {
-      this._note = note;
-      this.propagateChange(this._note);
-    }, 0);
-  }
-
   constructor() {
   }
 
@@ -74,7 +67,8 @@ export class TestCardComponent implements OnInit, ControlValueAccessor {
     this.validateFields();
   }
 
-  toggleIncorrect() {
+
+  toggleIncorrect(event) {
     this.incorrect = !this.incorrect;
   }
 

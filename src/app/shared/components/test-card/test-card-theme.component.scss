@@ -12,6 +12,9 @@
       &.incorrect {
         background-color: #ff4f38;
         color: white;
+        input {
+          color: black;
+        }
       }
       &:not(.incorrect) {
         &.active {
