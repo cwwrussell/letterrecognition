@@ -140,7 +140,7 @@ export class TeacherTestViewComponent implements OnInit, CanDeactivate<TeacherTe
     return this.testComplete;
   }
 
-  getTestQuestionFormControls() {
+  get getTestQuestionFormControls() {
     return this.testQuestionsForm.controls;
   }
 }
