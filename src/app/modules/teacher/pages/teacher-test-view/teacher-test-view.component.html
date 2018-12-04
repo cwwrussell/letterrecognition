@@ -1,6 +1,6 @@
 <div [formGroup]="testForm" class="grid">
-  <div class="col-9_md-12 grid">
-    <div *ngFor="let control of getTestQuestionFormControls; let i = index;"
+  <div class="col-9_lg-8_md-12 grid">
+    <div *ngFor="let control of getTestQuestionFormControls.controls; let i = index;"
          class="col-3_lg-4_sm-6_xs-12">
       <letters-test-card
         [active]="currentQuestionPos === i"
@@ -11,7 +11,7 @@
       ></letters-test-card>
     </div>
   </div>
-  <div class="col-3_md-12">
+  <div class="col-3_lg-4_md-12">
     <mat-card class="teacher-test-panel">
       <mat-card-header>
         <mat-card-title class="test-timer">
